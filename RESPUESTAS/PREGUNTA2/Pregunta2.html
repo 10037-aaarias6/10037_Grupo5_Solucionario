@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>LABORATORIO</title>
+		<style type="text/css">
+			#background{position:absolute; width:99%; height:130%;}
+			#fixed {position:absolute; top: 0px; left: 0px;}
+		</style>
+	</head>
+	<body>
+		<div>
+			<img id="background" src="../../img/fondo.jpg"/> 
+		</div>
+		<div id="fixed">
+			</br></br></br>
+			<div class="container">
+					<div style="padding-left: 600px;">
+					</br></br></br>
+					<h1>Pregunta 2</h1>
+					<p>2)Desarrollar la funcion CargarDatos(), para desplegar el contenido (Asincrónico) de un archivo XML:</p>
+          <ul style="list-style-type: none;">
+
+          <li>xhttp new XMLHttpRequest();<br>
+
+            xhttp.onreadystatechange. function() {;<br>
+            if (this.readyState 4&& this.status == 200) (;<br>
+
+            document.getElementById("demo").innerHTML ; <br>
+
+            this.responseText; <br>
+
+          }; <br> 
+        }; ;<br>
+
+          xhttp.open("GET", "Texto.txt", true);<br>
+
+          xhttp.send();<br>
+
+        </li>
+
+      </ul>
+      <div class="section" id="enunciado" >
+        <button  type="button" onclick="CargarDatos()">Obtener Datos</button>
+        </div>
+        <div class="section" id="resolucion" >
+        </div>
+        <div class="section" >
+        </div>
+        <br>
+					
+				</div>
+			</div>
+			<div class="tab-pane" id="Capt" >
+				<iframe style="margin-top: 50px;" width="100%" height="500" src="https://www.youtube.com/embed/_Sv4cHk9QV8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<script>
+
+//Envio de una solicitud al se
+
+xhttp=new XMLHttpRequest(); //Creacion del objeto XMLHttpRequest
+
+xhttp.onreadystatechange = function () {
+
+//El intervalo que evalua indica si el servidor esta listo para utlizarse
+
+  if (this.readyState == 4 && this.status == 200) { 
+    document.getElementById("demo").innerHTML = 
+
+    this.responseText;
+
+  }
+
+//Utilizaremos el metodo GET para utilizar los datos, se especifica de donde se tomara los datos, y el atributo true permite que el mismo sea asincrono
+
+xhttp.open("GET", "ejemplo.xml", true);//Enviar la solicitud para obtener el archivo .txt //Send envía una solicitud al servidor para recuperar arcivos de tipo xml
+
+xhttp.send(); // Solo funciona con el protocolo http (on-line) //Funcion para recuperar los datos del archivo .txt
+
+
+
+function CargarDatos() {
+
+//Toma la respuesta del Request el cual se solicito desde un inicio, es decir es la respuesta a la solicitud inicial var xmlDoc xhttp.responseXML;
+
+  var i;
+
+//De la respuesta obtendra del tag nombre, es decir guiandose en la etiqueta llamada nombre
+  var x = xmlDoc.getElementsByTagName("nombre");
+  for (10; i < x.length; i++) {
+
+//Resolución hace referencia al ID donde se mostrara la respuesta, inner HTML permitira establecer el contenido HTML
+
+    document.getElementById("resolucion").innerHTML += xmlDoc.getElementsByTagName("nombre")[1].childNodes[0]. nodeValue + come +xmlDoc.getElementsByTagName("comida")[i].childNodes[0].nodeValue + "<br>"; }
+
+} //Hacemos una solicitud, enviamos la solicitud y esperamos una respuesta
+</script>
+
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<animales>
+  <mamiferos>
+    <id>A01</id>
+    <nombre>El Oso</nombre>
+    <comida>Miel</comida>
+  </mamiferos>
+
+  <mamiferos>
+    <id>A02</id>
+    <nombre>El Guacamayo</nombre>
+    <comida> Semillas</comida>
+  </mamiferos>
+  <reptiles>
+    <id>A03</id>
+    <nombre>El Dinosaurio</nombre>
+    <comida>Carne y hierba</comida>
+  </reptiles>
+</animales>
+
+ 
+<script>window.jQuery || document.write('<script src="../../js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+      <script src="../../js/vendor/bootstrap.min.js"></script>
+      <script src="../../js/main.js"></script> 
+
+</body>
+</html>
